@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-1-instalar dependencias npm install 
+1-instalar dependencias npm install ,
 2-correr el archivo con npm serve
 
 
