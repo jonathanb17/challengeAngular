@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="col-md-6 offset-md-3">
+          <div class="card card-body">
+            <form action="">
+              <div class="form-group">
+                <label for="my-input">Ingrese un profesor</label>
+                <input id="my-input" class="form-control" type="text" name="profesor" [(ngModel)]="formu.profesor">
+              </div>
+
+              <div class="form-group">
+                <label for="my-input">Ingrese una materia</label>
+                <input id="my-input" class="form-control" type="text" name="materia" [(ngModel)]="formu.materia">
+              </div><br>
+
+
+              <div class="form-group">
+                <label for="my-input">Ingrese una turno</label>
+                <select name="turno" [(ngModel)]="formu.turno">
+                  <option [value]="turno" *ngFor="let turno of turnosSemana" (change)="agregarTurno()">{{turno}}
+                  </option>
+                </select>
+              </div> <br>
+
+              <div class="form-group">
+                <label for="my-input">Ingrese un dia</label>
+                <select name="dia" [(ngModel)]="formu.dia">
+                  <option [value]="dato" *ngFor="let dato of diasSemanas" (change)="agregarDia()">{{dato}}</option>
+                </select>
+              </div>
+              <button class="btn btn-primary bg-primary form-control mt-3"
+                (click)="agregarDatos(formu.dia)">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <table class="table table-light">
+          <tbody>
+            <tr>
+              <td>Profesor</td>
+              <td>materia</td>
+              <td>turno</td>
+              <td>dia</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr *ngFor="let af of arrayForm">
+              <th>{{af.profesor}}</th>
+              <th>{{af.materia}}</th>
+              <th>{{af.turno}}</th>
+              <th>{{af.dia}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
